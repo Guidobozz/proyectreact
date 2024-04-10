@@ -1,35 +1,29 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {BrowserRouter, Routes, Router, Route } from 'react-router-dom';
+import {BrowserRouter, Routes, Route } from 'react-router-dom';
 import React from 'react';
-import Cards from './ItemListContainer/cards';
-import CardsData from '../src/ItemListContainer/cardsdata';
 import ItemDetailContainer from './ItemListContainer/itemdetailcontainer';
 import Navbar from './Navbar/navbar';
+import "./ItemListContainer/card.css";
+import { CartProvider } from './Carrito/cartcontext';
+import ProductoDetail from './ItemListContainer/productodetail'; 
 import Itemlistcontainer from './ItemListContainer/itemlistcontainer';
 
 
 function App() {
   return (
-    <div>
-    <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <Itemlistcontainer greeting={"Bienvenidos"} />
-                <Cards />
-              </>
-            }
-          />
-          <Route path="/category/:categoryId" element={<Itemlistcontainer />} />
-          <Route path="/item" element={<ItemDetailContainer />} />
-          <Route path="*" element={<h1>Error 404</h1>} />
-        </Routes>
-      </BrowserRouter>
-  </div>
+    <CartProvider>
+    <BrowserRouter> 
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Itemlistcontainer greeting="Bienvenidos" />} /> 
+        <Route path="/category/:categoryId" element={<Itemlistcontainer />} />
+        <Route path="/item" element={<ItemDetailContainer />} />
+        <Route path="/product/:productId" element={<ProductoDetail />} />
+        <Route path="*" element={<h1>Error 404</h1>} />
+      </Routes>
+    </BrowserRouter>
+  </CartProvider>
   );
 }
 

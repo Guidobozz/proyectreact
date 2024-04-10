@@ -1,0 +1,68 @@
+export const Datacards = [
+	{
+		id: 1,
+		stock: 25,
+		title: "Gorra New York Yankees MLB",
+		img: "https://media.newera.com.ar/catalog/product/cache/06cfaa02c67cf3a5c3c05d775284c631/g/o/gorra-new-era-new-york-yankees-mlb-world-series-pin-59fifty-w3t000187-1_1_6.jpg",
+		price: 60500,
+		category: "MLB",
+	},
+	{
+		id: 2,
+		stock: 12,
+		title: "Gorra Milwaukee Bucks NBA",
+		img: "https://media.newera.com.ar/catalog/product/cache/06cfaa02c67cf3a5c3c05d775284c631/7/0/70353702-gorra-new-era-9fifty-milwaukee-bucks-basic-black_n23s0uo9251glicp.jpg",
+		price: 58000,
+		category: "NBA",
+	},
+	{
+		id: 3,
+		stock: 18,
+		title: "Gorra New England Patriots NFL",
+		img: "https://media.newera.com.ar/catalog/product/cache/06cfaa02c67cf3a5c3c05d775284c631/7/0/70405756-gorra-new-era-new-england-patriots-5950-oceanside-blue-min.jpg",
+		price: 60000,
+		category: "NFL",
+	},
+	{
+		id: 4,
+		stock: 14,
+		title: "Gorra Washington Commanders NFL",
+		img: "https://images.footballfanatics.com/washington-commanders/washington-commanders-new-era-the-league-9forty-adjustable-cap_ss4_p-13319716+u-17psz70f9w4z7w8i12oy+v-86f8304ad6204059aff888b23e841bbb.jpg?_hv=2&w=900",
+		price: 40000,
+		category: "NFL",
+	},
+	{
+		id: 5,
+		stock: 40,
+		title: "Gorra Miami Heat NBA",
+		img: "https://media.newera.com.ar/catalog/product/cache/06cfaa02c67cf3a5c3c05d775284c631/g/o/gorra-new-era-miami-heat-950-nba-back-half-60298438-1.jpg",
+		price: 50000,
+		category: "NBA",
+	},
+	{
+		id: 6,
+		stock: 8,
+		title: "Buzo Golden State Warriors NBA",
+		img: "https://media.newera.com.ar/catalog/product/cache/06cfaa02c67cf3a5c3c05d775284c631/b/u/buzo-new-era-golden-state-warriors-nba-stripe-piping-11860097-1.jpg",
+		price: 165000,
+		category: "NBA",
+	},
+	{
+		id: 7,
+		stock: 10,
+		title: "Campera New York Yankee",
+		img: "https://media.newera.com.ar/catalog/product/cache/06cfaa02c67cf3a5c3c05d775284c631/c/a/campera-new-era-new-york-yankees-mlb-hooded-coaches-jkt-11860149-1.jpg",
+		price: 180000,
+		category: "MLB",
+	},
+	{
+		id: 8,
+		stock: 17,
+		title: "Chaqueta Bomber New Era",
+		img: "https://www.neweracap.eu/globalassets/products/b8952_264/13037895/13037895-left2.jpg",
+		price: 185000,
+		category: "MLB",
+	},
+	
+	
+];

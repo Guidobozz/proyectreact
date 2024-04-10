@@ -1,37 +1,99 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, useLocation } from 'react-router-dom';
-import Cards from '../ItemListContainer/cards'; 
-import CardsData from './cardsdata';
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { Datacards } from "./datacards";
+import { Loader } from "../ItemListContainer/loader";
+import ProductoCard from "../ItemListContainer/productocard"; 
 
-const Itemlistcontainer = ({ greeting }) => {
+const Itemlistcontainer = () => {
   const { categoryId } = useParams();
+  const [loading, setLoading] = useState(true);
   const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
+    setLoading(true);
     if (categoryId) {
-      const products = CardsData.filter(product => product.category === categoryId);
-      setFilteredProducts(products);
+      const filtered = Datacards.filter((product) => product.category === categoryId);
+      setFilteredProducts(filtered);
     } else {
-      setFilteredProducts([]);
+      setFilteredProducts(Datacards);
     }
+    setLoading(false); 
   }, [categoryId]);
 
+  if (loading) return <Loader />;
+
+  const handleAddToCart = (product) => {
+    console.log('Añadir al carrito:', product);
+  };
+
   return (
-    <div>
-      <h1>{greeting}</h1>
-      {filteredProducts.map(product => (
-        <div key={product.id}>
-          <h2>{product.title}</h2>
-          <p>{product.description}</p>
-          <img src={require(`../assets/${product.image}`).default} alt={product.title} />
-          <p>{product.price}</p>
-        </div>
-      ))}
+    <div className="container">
+      <div className="row">
+        {filteredProducts.map((product) => (
+          <div className="col-md-4" key={product.id}>
+            <ProductoCard product={product} onAddToCart={handleAddToCart} />
+          </div>
+        ))}
+      </div>
     </div>
   );
-}
+};
 
 export default Itemlistcontainer;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { Datacards } from "./datacards";
+import { Loader } from "../ItemListContainer/loader";
+import ItemList from "./itemlist"; 
+
+const Itemlistcontainer = () => {
+  const { categoryId } = useParams();
+  const [loading, setLoading] = useState(true);
+  const [filteredProducts, setFilteredProducts] = useState([]);
+
+  useEffect(() => {
+    setLoading(true);
+    if (categoryId) {
+      const filtered = Datacards.filter((product) => product.category === categoryId);
+      setFilteredProducts(filtered);
+    } else {
+      setFilteredProducts(Datacards);
+    }
+    setLoading(false); 
+  }, [categoryId]);
+
+  if (loading) return <Loader />;
+
+  return (
+    <div className="container--cards">
+      <ItemList products={filteredProducts} />
+    </div>
+  );
+};
+
+export default Itemlistcontainer; 
+*/

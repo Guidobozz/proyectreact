@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 import './card.css';
 import Gorra from  '../assets/gorrauno.png'
 import Gorrados from  '../assets/gorrados.png'
@@ -8,10 +8,26 @@ import Gorracinco from  '../assets/gorracinco.png'
 import Ropauno from  '../assets/ropauno.png'
 import Ropados from  '../assets/ropados.png'
 import Ropatres from  '../assets/ropatres.png'
-import CardsData from './cardsdata';
-
-
-
+import Datacards from './datacards';
+const Cards = () => {
+    console.log(Datacards); 
+    return (
+        <div className="card-container">
+            {Datacards.map((card, index) => (
+                <div className="card" key={index}>
+                    <img src={require(`../assets/${card.src}`).default} alt={card.title} />
+                    <div>
+                        <h1>{card.title}</h1>
+                        <p>{card.description}</p>
+                        <h2>{card.price}</h2> 
+                    </div>
+                </div>
+            ))}
+        </div>
+    );
+}
+*/
+/*
 const Cards = () => {
     return (
         <div className="card-container">
@@ -96,4 +112,4 @@ const Cards = () => {
 
 
 export default Cards;
-
+*/

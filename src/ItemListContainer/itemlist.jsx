@@ -1,3 +1,4 @@
+/*
 import React from 'react';
 
 const ItemList = ({ products }) => {
@@ -16,3 +17,4 @@ const ItemList = ({ products }) => {
 };
 
 export default ItemList;
+*/

@@ -1,11 +1,10 @@
-import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../assets/logopagina.png';
 import Carrito from '../Carrito/carrito';
-import { CartContext } from '../Carrito/cartcontext'; 
+import "../Navbar/nav.css";
 
 const Navbar = () => {
-    const { cartQuantity } = useContext(CartContext); 
+     
 
     return (
         <nav>
@@ -15,11 +14,12 @@ const Navbar = () => {
             </div>
             <div>
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                    <Link to="/category/NBA" className="btn btn-primary mx-2">NBA</Link>
-                    <Link to="/category/MLB" className="btn btn-primary mx-2">MLB</Link>
-                    <Link to="/category/NFL" className="btn btn-primary mx-2">NFL</Link>
+                    <Link to="/category/NBA" className="btn btn-dark btn-lg mx-2">NBA</Link>
+                    <Link to="/category/MLB" className="btn btn-dark btn-lg mx-2">MLB</Link>
+                    <Link to="/category/NFL" className="btn btn-dark btn-lg mx-2">NFL</Link>
+                    <Link to="/category/NHL" className="btn btn-dark btn-lg mx-2">NHL</Link>
                 </div>
-                <Carrito cartQuantity={cartQuantity} /> 
+                <Carrito /> 
             </div>
         </nav>
     );

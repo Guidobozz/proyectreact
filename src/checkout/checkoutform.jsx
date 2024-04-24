@@ -87,6 +87,7 @@ const CheckoutForm = () => {
     };
     return (
         <div className="container">
+             {loading && <p>Cargando...</p>}
             {step === 1 && (
                 <form className="row g-3" onSubmit={handleSubmitBasicInfo}>
                     <div className="col-md-6">
@@ -107,7 +108,11 @@ const CheckoutForm = () => {
                     </div>
                     <div className="col-12">
                         <button type="submit" className="btn btn-primary">Continuar</button>
+                        {orderNumber && (
+                <p>Número de Orden: {orderNumber}</p>
+            )}
                     </div>
+
                 </form>
             )}
 

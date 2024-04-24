@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getproducts, getProductsByCategory } from "../services/firebase";
+import { getproducts} from "../services/firebase";
 import { Loader } from "../ItemListContainer/loader";
 import ProductoCard from "../ItemListContainer/productocard"; 
 

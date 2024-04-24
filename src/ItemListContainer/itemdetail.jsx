@@ -1,4 +1,3 @@
-/*
 import React from 'react';
 import ItemCount from "../ItemListContainer/itemcount";
 
@@ -22,5 +21,3 @@ const ItemDetail = ({ prod }) => {
 };
 
 export default ItemDetail;
-
-*/

@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Jacquard+24&display=swap');
+
+
 nav {
     background-image: url(../assets/darkness.png);
+    
   }
+  nav h1{
+    font-family: 'Jacquard 24', sans-serif;
+    font-size: 5rem;
+  }
+
+  

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Datacards } from "./datacards"; 
-import  ItemDetail  from "../ItemListContainer/itemdetail";
+import { getOneProducts } from "../services/firebase"; 
+import ItemDetail from "../ItemListContainer/itemdetail";
 import { Loader } from "./loader";
 
 const ItemDetailContainer = () => {
@@ -12,17 +12,14 @@ const ItemDetailContainer = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       setLoading(true);
-     
+
       try {
-        
-        const foundProduct = Datacards.find((item) => item.id === parseInt(idItem));
-        if (foundProduct) {
-          setProduct(foundProduct);
+        const productData = await getOneProducts(idItem);
+        if (productData) {
+          setProduct(productData);
         } else {
-          console.error("Producto no encontrado");
         }
       } catch (error) {
-        console.error("Error al recuperar el producto:", error);
       } finally {
         setLoading(false);
       }
